@@ -1,0 +1,11 @@
+node_modules/
+.directory
+.vscode/
+local-*.json
+local.json
+local-*.js
+local.js
+*.log
+.idea
+dist/
+.project
