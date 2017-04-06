@@ -7,5 +7,8 @@ module.exports = {
   ecmaFeatures: {
     blockBindings: true,
     templateStrings: true
+  },
+  rules: {
+    'comma-dangle': ['error', 'never'],
   }
 };

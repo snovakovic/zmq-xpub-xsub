@@ -2,9 +2,9 @@
   "name": "zmq-xpub-xsub",
   "version": "0.0.1",
   "description": "Central hub for zmq xhub xpub",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
     "eslint-plugin-import": "^2.2.0"
+  },
+  "dependencies": {
+    "config": "^1.25.1",
+    "zmq": "^2.15.3"
   }
 }
