@@ -16,7 +16,7 @@ hooks:
 # During the ApplicationStop deployment lifecycle event, run the commands
 #   in the script specified in "location" starting from the root of the
 #   revision's file bundle.
-  ApplicationStop:
+  #ApplicationStop:
     # - location: scripts/deregister_from_elb.sh
     #   timeout: 300
     #- location: scripts/application_stop.sh
