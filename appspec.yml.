@@ -1,0 +1,51 @@
+#  This is an appspec.yml template file for use with AWS CodeDeploy.
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/zmq-xpub-xsub/
+    owner: nd-deploy
+permissions:
+  - object: /var/www
+    pattern: "**"
+    owner: nd-deploy
+    group: nd-deploy
+    mode: 755
+
+hooks:
+# During the ApplicationStop deployment lifecycle event, run the commands
+#   in the script specified in "location" starting from the root of the
+#   revision's file bundle.
+  ApplicationStop:
+    # - location: scripts/deregister_from_elb.sh
+    #   timeout: 300
+    #- location: scripts/application_stop.sh
+    #  timeout: 300
+    #- location: scripts/wait_for_bootstrap.sh
+    #  runas: root
+# During the BeforeInstall deployment lifecycle event, run the commands
+#   in the script specified in "location".
+  # BeforeInstall:
+  #   - location: scripts/aws_deploy_beforeinstall.sh
+  #     timeout: 300
+  #     runas: root
+# During the AfterInstall deployment lifecycle event, run the commands
+#   in the script specified in "location".
+  # AfterInstall:
+  #   - location:
+  #     timeout:
+  #     runas:
+# During the ApplicationInstall deployment lifecycle event, run the commands
+#   in the script specified in "location".
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 600
+      runas: nd-deploy
+    # - location: scripts/register_with_elb.sh
+    #   timeout: 120
+# During the ValidateService deployment lifecycle event, run the commands
+#   in the script specified in "location".
+ # ValidateService:
+ #   - location: scripts/validate_service.sh
+ #     timeout: 300
+ #     runas: mlg-delpoy
