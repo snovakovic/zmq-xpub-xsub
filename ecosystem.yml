@@ -1,0 +1,10 @@
+apps:
+  - name      : xpxs
+    script    : /var/www/zmq-xpub-xsub/src/index.js
+    cwd       : /var/www/zmq-xpub-xsub
+    exec_mode : cluster
+    instances : 1
+    env       :
+      NODE_ENV  : '{integration || stage || production}'
+      XSUB_PORT : '{xsub-port}'
+      XPUB_PORT : '{xpub-port}'
