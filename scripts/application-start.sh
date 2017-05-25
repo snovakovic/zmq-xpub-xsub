@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /var/www/zmq-xpub-xsub/
+cd /opt/notredame/apps/ecosystem/
 pm2 start ecosystem.yml
