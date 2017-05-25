@@ -3,10 +3,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/zmq-xpub-xsub/
+    destination: /opt/notredame/apps/zmq-xpub-xsub/
     owner: nd-deploy
 permissions:
-  - object: /var/www
+  - object: /opt/notredame
     pattern: "**"
     owner: nd-deploy
     group: nd-deploy
