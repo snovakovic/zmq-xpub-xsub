@@ -19,7 +19,7 @@ hooks:
   ApplicationStop:
     # - location: scripts/deregister_from_elb.sh
     #   timeout: 300
-    - location: bin/application_stop.sh
+    - location: bin/application-stop.sh
       timeout: 300
     #- location: scripts/wait_for_bootstrap.sh
       runas: root
@@ -38,7 +38,7 @@ hooks:
 # During the ApplicationInstall deployment lifecycle event, run the commands
 #   in the script specified in "location".
   ApplicationStart:
-    - location: scripts/application_start.sh
+    - location: scripts/application-start.sh
       timeout: 600
       runas: root
     # - location: scripts/register_with_elb.sh
