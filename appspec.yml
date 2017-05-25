@@ -40,7 +40,7 @@ hooks:
   ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 600
-      runas: nd-deploy
+      runas: root
     # - location: scripts/register_with_elb.sh
     #   timeout: 120
 # During the ValidateService deployment lifecycle event, run the commands
