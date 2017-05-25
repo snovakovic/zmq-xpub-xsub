@@ -38,7 +38,7 @@ hooks:
 # During the ApplicationInstall deployment lifecycle event, run the commands
 #   in the script specified in "location".
   ApplicationStart:
-    - location: scripts/application-start.sh
+    - location: bin/application-start.sh
       timeout: 600
       runas: root
     # - location: scripts/register_with_elb.sh
