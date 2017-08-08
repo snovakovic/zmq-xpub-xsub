@@ -1,7 +1,7 @@
 {
   "name": "zmq-xpub-xsub",
-  "version": "0.1.0",
-  "description": "Central hub for zmq xhub xpub",
+  "version": "0.1.1",
+  "description": "Central hub for ZeroMQ",
   "main": "src/index.js",
   "author": "stefan.novakovich@gmail.com",
   "license": "MIT",
