@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const ZmqPs = require('../lib/index.js');
 const minimist = require('minimist');
 
