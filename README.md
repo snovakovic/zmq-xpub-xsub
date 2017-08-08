@@ -1,6 +1,6 @@
 # zmq-xpub-xsub
 
-Central hub for ZeroMQ that allows us to have multiple publisher and subscribers on same port.
+Central hub for ZeroMQ that allow multiple publisher and subscribers on same port.
 
 ### Dependencies
 
@@ -14,8 +14,8 @@ Central hub for ZeroMQ that allows us to have multiple publisher and subscribers
 
 ### Starting zmq-xpub-xsub
 
-zmq-xpub-xsub can be started directly from console or it can be required and started from hosted application.
-Host application can be used for purpose of deploying do different environments
+zmq-xpub-xsub can be started directly from terminal or it can be required and started from hosted application.
+Host application can be used for purpose of deploying to different environments
 where host application will define deployment configuration.
 
 1) Starting zmq-xpub-xsub with host application
