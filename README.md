@@ -30,7 +30,7 @@ ZmqPs.set('debug', true);
 ZmqPs.run({ xSubPort: 8000, xPubPort: 8001 });
 ```
 
-1) Starting zmq-xpub-xsub from console (after running npm install zmq-xpub-xsub -g)
+1) Starting zmq-xpub-xsub from terminal (after running **npm install zmq-xpub-xsub -g**)
 
 ```javascript
 >> zqm-xpub-xsub --xSubPort 8000 --xPubPort 8001
