@@ -50,9 +50,15 @@ ZmqPs.run({ xSubPort: 8000, xPubPort: 8001 });
 // Not required! used for example only
 const zmq = require('zmq'); //https://github.com/JustinTulloss/zeromq.node
 
+const options = {
+  baseAddress: 'tcp://127.0.0.1',
+  xSubPort: 8000,
+  xPubPort: 8001
+}
+
 // Subscriber
 const subscriber = zmq.socket('sub');
-subscriber.connect('xpub-address');
+subscriber.connect(`${options.baseAddress}:${options.xPubPort}`);
 
 subscriber.on('message', (key, message) => {
   console.log('Message is recived:', key, message);
@@ -60,7 +66,7 @@ subscriber.on('message', (key, message) => {
 
 // Publisher
 const publisher = zmq.socket('pub');
-publisher.connect('xsub-address');
+publisher.connect(`${options.baseAddress}:${options.xSubPort}`);
 
 publisher.send(['key', 'message'])
 ```
