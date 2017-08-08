@@ -1,22 +1,54 @@
-# ZeroMQ xpub/xsub
+# zmq-xpub-xsub
 
-Central hub for ZeroMQ.
-Central hub allows us to have multiple publisher and subscribers on same port.
+Central hub for ZeroMQ that allows us to have multiple publisher and subscribers on same port.
 
 ### Dependencies
 
 1) [ZeroMQ](http://zeromq.org/)
 
+
+### Options
+
+* xSubPort - defaults to 8700 if not provided
+* xPubPort - default to 8701 if not provided
+
+### Starting zmq-xpub-xsub
+
+zmq-xpub-xsub can be started directly from console or it can be required and started from hosted application.
+Host application can be used for purpose of deploying do different environments
+where host application will define deployment configuration.
+
+1) Starting zmq-xpub-xsub with host application
+
+```javascript
+const ZmqPs= require('zmq-xpub-xsub');
+
+// Log xSubPort and XpubPort to console
+ZmqPs.set('debug', true);
+
+// zmq-xpub-xsub are launched and listening at provided ports
+ZmqPS.run({ xSubPort: 8000, xPubPort: 8001 });
+```
+
+1) Starting zmq-xpub-xsub from console (after running npm install zmq-xpub-xsub -g)
+
+```javascript
+>> zqm-xpub-xsub --xSubPort 8000 --xPubPort 8001
+
+// If we want to see ports on which xpub-xsub is listening we can provide --debug flag
+>> zmq-xpub-xsub --debug
+```
+
 ### Example of usage
 
-1) Install ZeroMq and run application.
-2) By default xsub is run on port 8700 and xpub is run on port 8701 this can be changed by using custom XSUB_PORT and XPUB_PORT environment variables.
-3) Example below illustrate usage of xpub/xsub application as a messaging hub. Note code below is 3rd party code that is connecting to xpub/xsub application.
+1) Install and configure ZeroMq.
+2) Start zmq-xpub-xsub lib
+3) Example below illustrate usage of xpub/xsub application as a messaging hub.
 
 
 ```javascript
-//https://github.com/JustinTulloss/zeromq.node
-const zmq = require('zmq');
+// Not required! used for example only
+const zmq = require('zmq'); //https://github.com/JustinTulloss/zeromq.node
 
 // Subscriber
 const subscriber = zmq.socket('sub');
