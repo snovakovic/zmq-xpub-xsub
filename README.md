@@ -47,8 +47,8 @@ ZmqPS.run({ xSubPort: 8000, xPubPort: 8001 });
 
 
 ```javascript
-//https://github.com/JustinTulloss/zeromq.node
-const zmq = require('zmq');
+// Not required! used for example only
+const zmq = require('zmq'); //https://github.com/JustinTulloss/zeromq.node
 
 // Subscriber
 const subscriber = zmq.socket('sub');
