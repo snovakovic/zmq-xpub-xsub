@@ -1,6 +1,6 @@
 {
   "name": "zmq-xpub-xsub",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Central hub for ZeroMQ",
   "main": "lib/index.js",
   "author": "stefan.novakovich@gmail.com",

@@ -4,7 +4,7 @@ Central hub for ZeroMQ that allows multiple publisher and subscribers on same po
 
 ### Dependencies
 
-1) [ZeroMQ](http://zeromq.org/)
+* [ZeroMQ](http://zeromq.org/)
 
 
 ### Options
@@ -27,7 +27,7 @@ const ZmqPs= require('zmq-xpub-xsub');
 ZmqPs.set('debug', true);
 
 // zmq-xpub-xsub are launched and listening at provided ports
-ZmqPS.run({ xSubPort: 8000, xPubPort: 8001 });
+ZmqPs.run({ xSubPort: 8000, xPubPort: 8001 });
 ```
 
 1) Starting zmq-xpub-xsub from console (after running npm install zmq-xpub-xsub -g)
