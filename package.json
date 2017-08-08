@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Central hub for zmq xhub xpub",
   "main": "src/index.js",
+  "author": "stefan.novakovich@gmail.com",
+  "license": "MIT",
+  "homepage": "https://github.com/snovakovic/zmq-xpub-xsub#readme",
+  "engines" : { "node" : ">=6.0.0" },
   "scripts": {
     "start": "node lib/index.js"
   },
@@ -10,17 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/snovakovic/zmq-xpub-xsub.git"
   },
+  "bugs": {
+    "url": "https://github.com/snovakovic/zmq-xpub-xsub/issues"
+  },
   "keywords": [
     "zmq",
     "xhub",
     "xpub"
   ],
-  "author": "stefan.novakovich@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/snovakovic/zmq-xpub-xsub/issues"
-  },
-  "homepage": "https://github.com/snovakovic/zmq-xpub-xsub#readme",
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
