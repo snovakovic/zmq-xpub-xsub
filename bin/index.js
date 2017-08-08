@@ -1,4 +1,4 @@
-const ZmqPs = require('../lib');
+const ZmqPs = require('../lib/index.js');
 const minimist = require('minimist');
 
 
