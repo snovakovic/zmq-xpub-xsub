@@ -1,6 +1,6 @@
 # zmq-xpub-xsub
 
-Central hub for ZeroMQ that allow multiple publisher and subscribers on same port.
+Central hub for ZeroMQ that allows multiple publisher and subscribers on same port.
 
 ### Dependencies
 
