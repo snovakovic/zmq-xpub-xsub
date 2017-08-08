@@ -1,8 +1,5 @@
 # Ignore everything
-*
-
-# except
-!lib
-!package.json
-!LICENSE
-!README
+node_modules
+.editorconfig
+.eslintrc.js
+.npm-debug.log
