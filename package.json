@@ -1,9 +1,9 @@
 {
   "name": "zmq-xpub-xsub",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Central hub for ZeroMQ",
   "main": "lib/index.js",
-  "bin": "bin/bower",
+  "bin": "bin/index.js",
   "author": "stefan.novakovich@gmail.com",
   "license": "MIT",
   "homepage": "https://github.com/snovakovic/zmq-xpub-xsub#readme",
