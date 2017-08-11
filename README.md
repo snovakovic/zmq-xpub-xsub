@@ -6,11 +6,10 @@ Central hub for ZeroMQ that allows multiple publisher and subscribers on same po
 
 * [ZeroMQ](http://zeromq.org/)
 
-
 ### Options
 
-* xSubPort - defaults to 8700 if not provided
-* xPubPort - default to 8701 if not provided
+* xSubPort - 8700 default
+* xPubPort - 8701 default
 
 ### Starting zmq-xpub-xsub
 
@@ -18,19 +17,19 @@ zmq-xpub-xsub can be started directly from terminal or it can be required and st
 Host application can be used for purpose of deploying to different environments
 where host application will define deployment configuration.
 
-1) Starting zmq-xpub-xsub with host application
+* Starting zmq-xpub-xsub with host application
 
 ```javascript
 const ZmqPs= require('zmq-xpub-xsub');
 
-// Log xSubPort and XpubPort to console
+// Log xSubPort and xPubPort to console
 ZmqPs.set('debug', true);
 
-// zmq-xpub-xsub are launched and listening at provided ports
+// Start zmq-xpub-xsub on provided ports
 ZmqPs.run({ xSubPort: 8000, xPubPort: 8001 });
 ```
 
-1) Starting zmq-xpub-xsub from terminal (after running **npm install zmq-xpub-xsub -g**)
+* Starting zmq-xpub-xsub from terminal (after running **npm install zmq-xpub-xsub -g**)
 
 ```javascript
 >> zqm-xpub-xsub --xSubPort 8000 --xPubPort 8001
@@ -45,12 +44,13 @@ ZmqPs.run({ xSubPort: 8000, xPubPort: 8001 });
 2) Start zmq-xpub-xsub lib
 3) Example below illustrate usage of xpub/xsub application as a messaging hub.
 
+subscriber.connect &&  publisher.connect will now work in node cluster mode.
 
 ```javascript
 // Not required! used for example only
 const zmq = require('zmq'); //https://github.com/JustinTulloss/zeromq.node
 
-const options = {
+const config = {
   baseAddress: 'tcp://127.0.0.1',
   xSubPort: 8000,
   xPubPort: 8001
@@ -58,7 +58,7 @@ const options = {
 
 // Subscriber
 const subscriber = zmq.socket('sub');
-subscriber.connect(`${options.baseAddress}:${options.xPubPort}`);
+subscriber.connect(`${config.baseAddress}:${config.xPubPort}`);
 
 subscriber.on('message', (key, message) => {
   console.log('Message is recived:', key, message);
@@ -66,7 +66,7 @@ subscriber.on('message', (key, message) => {
 
 // Publisher
 const publisher = zmq.socket('pub');
-publisher.connect(`${options.baseAddress}:${options.xSubPort}`);
+publisher.connect(`${config.baseAddress}:${config.xSubPort}`);
 
 publisher.send(['key', 'message'])
 ```
